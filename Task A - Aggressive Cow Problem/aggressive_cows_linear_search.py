@@ -1,14 +1,19 @@
-from itertools import combinations
-
-def min_distance(placement):
-    if (len(placement) == 1): return 0
-    min_distance = float('inf')
-    for i in range(1, len(placement)):
-        min_distance = min(min_distance, placement[i] - placement[i - 1])
-    return min_distance
+from distance_ok import distance_OK
 
 def aggressive_cows_linear_search(stall_position, cow_count):
-    largest_min_distance = 0
-    for placement in combinations(stall_position, cow_count):
-        largest_min_distance = max(largest_min_distance, min_distance(placement))
-    return largest_min_distance
+
+    # order stall positions into ascending numerical order (side effect: modifies original)
+    stall_position.sort()
+
+    # total number of stalls available for assignment
+    stall_count = 0
+
+    # iterate for each possible distance from 1 to the maximum distance
+    for d in range(1, max(stall_position) - min(stall_position) +1):
+
+        if distance_OK(stall_position, d, cow_count):
+
+            # tally the largest distance where the arrangement is possible
+            stall_count = d
+    
+    return stall_count
