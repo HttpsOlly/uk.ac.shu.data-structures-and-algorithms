@@ -5,7 +5,7 @@ from aggressive_cows import aggressive_cows
 def main():
 
     # create a testable collection of stall position sizes
-    stall_position_sizes = [10, 100, 1000, 10000, 100000]
+    stall_position_sizes = [100, 1000, 5000, 10000, 20000, 30000, 40000, 50000]
 
     # introduce a random spread to give the stall positions some gaps
     random_spread_size = random.choice( range(2, 5) )
@@ -13,7 +13,7 @@ def main():
     # start writing a CSV of benchmarks
     timestamp = time.strftime('%Y%m%dT%H%M%S')
     with open(f"benchmark-{timestamp}.csv", 'a') as file:
-        file.write('stalls,cows,method,duration' + '\n')
+        file.write('stalls,cows,distance,method,duration' + '\n')
 
     # test each number of stall positions in the testable collection
     for stall_position_size in stall_position_sizes:
