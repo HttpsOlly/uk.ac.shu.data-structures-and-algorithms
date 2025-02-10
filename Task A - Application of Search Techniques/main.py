@@ -36,7 +36,6 @@ def main():
 
                 # start timer
                 benchmark_time_start = time.time()
-
                 largest_minimum_distance = aggressive_cows(stall_position, cow_count, method)
                 
                 # end timer
