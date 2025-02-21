@@ -13,8 +13,8 @@ df_bubble = df[df["Sort Method"] == "Bubble"]
 df_heap = df[df["Sort Method"] == "Heap"]
 
 #Undo below comments to plot only 10, 1000 and 5000. Else, it will plot all dataset sizes
-avg_duration_bubble = df_bubble.groupby("Dataset Size")["Duration"].mean()#.iloc[:3]
-avg_duration_heap = df_heap.groupby("Dataset Size")["Duration"].mean()#.iloc[:3]
+avg_duration_bubble = df_bubble.groupby("Dataset Size")["Duration"].mean().iloc[:3]
+avg_duration_heap = df_heap.groupby("Dataset Size")["Duration"].mean().iloc[:3]
 
 plt.figure(figsize=(10, 6))
 
@@ -31,6 +31,6 @@ plt.legend()
 plt.grid(True)
 
 #Undo comment below to save plt
-#plt.savefig("oliverpotts-bubble-sort-heap-sort-analysis.png")
+plt.savefig("oliverpotts-bubble-sort-heap-sort-analysis.png")
 
 plt.show()

@@ -19,6 +19,7 @@ plt.title("Linear vs Binary Search: Analysing Operations and Input Data Size", f
 
 plt.legend()
 
-plt.savefig("oliverpotts-linear-vs-binary-search.png")
+#Undo comment below to save plt
+#plt.savefig("oliverpotts-linear-vs-binary-search.png")
 
 plt.show()

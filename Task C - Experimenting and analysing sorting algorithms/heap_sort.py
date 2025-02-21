@@ -1,18 +1,18 @@
 def heap_sort_algorithm(data):
-    def max_heapify(arr, n, i):
-        biggest = i
-        left = (2 * i) + 1
-        right = (2 * i) + 2
+    def max_heapify(arr, heap_size, root):
+        biggest = root
+        left = (2 * root) + 1
+        right = (2 * root) + 2
 
-        if left < n and arr[left] > arr[biggest]:
+        if left < heap_size and arr[left] > arr[biggest]:
             biggest = left
 
-        if right < n and arr[right] > arr[biggest]:
+        if right < heap_size and arr[right] > arr[biggest]:
             biggest = right
 
-        if biggest != i:
-            arr[i], arr[biggest] = arr[biggest], arr[i]
-            max_heapify(arr, n, biggest)
+        if biggest != root:
+            arr[root], arr[biggest] = arr[biggest], arr[root]
+            max_heapify(arr, heap_size, biggest)
 
     n = len(data)
 
