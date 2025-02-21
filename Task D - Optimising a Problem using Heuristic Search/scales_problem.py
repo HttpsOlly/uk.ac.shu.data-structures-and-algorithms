@@ -1,3 +1,5 @@
+# Used inspiration from https://github.com/zairulmazwan/Tutorial6_Heuristic_Python/blob/main/Scales_Problem.py
+
 import random as rd
 import copy as cp
 

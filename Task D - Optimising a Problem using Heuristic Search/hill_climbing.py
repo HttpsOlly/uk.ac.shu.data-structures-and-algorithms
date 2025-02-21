@@ -1,3 +1,5 @@
+# Used inspiration from https://github.com/zairulmazwan/Tutorial6_Heuristic_Python/blob/main/Hill_Climbing.py
+
 import scales_problem as sp
 import random
 import aux
